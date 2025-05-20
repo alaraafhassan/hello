@@ -8,11 +8,6 @@
 </head>
 <body onload="getLocation">
 
-
-
-
-
-
 <script>
 const x = document.getElementById("demo");
 
@@ -25,7 +20,8 @@ function getLocation() {
 }
 
 function success(position) {
-    xhttp.open("GET", "presence.php?lat="+position.coords.latitude+"&long="+position.coords.longitude);
+    const xhttp = new XMLHttpRequest
+    xhttp.open("GET", "store.php?lat="+position.coords.latitude+"&long="+position.coords.longitude);
     xhttp.send();
 
 }
